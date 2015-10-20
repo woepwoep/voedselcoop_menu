@@ -2,13 +2,6 @@
 <openerp>
 	<data>
 
-		<!-- Action to open Suppliers list -->
-		<act_window
-			id="action_supplier"
-			name="Leveranciers"
-			res_model="res.partner"
-			view_mode="tree,form" />
-
 		<!-- Action to open Artikelbeheer -->
 		<act_window
 			id="action_artikelbeheer"
@@ -72,6 +65,22 @@
 			parent="voedselmenu_verkopen"
 			sequence="10"
 			action="base.action_partner_form"
+		/>
+
+		<!-- Voedsel.Coop / Instellingen -->
+        <menuitem
+			id="voedselmenu_instellingen"
+			name="Instellingen"
+			parent="voedselmenu_root"
+			sequence="40" />
+
+		<!-- Voedsel.Coop / Instellingen / Kassa's -->
+        <menuitem
+			id="voedselmenu_kassa"
+			name="Kassa's"
+			parent="voedselmenu_instellingen"
+			sequence="10"
+			action="point_of_sale.action_pos_config_pos"
 		/>
 
 
