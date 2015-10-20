@@ -34,6 +34,22 @@
 			action="base.action_partner_supplier_form"
 		/>
 
+		<!-- Voedsel.Coop / Winkelier -->
+        <menuitem
+			id="voedselmenu_winkelier"
+			name="Winkelier"
+			parent="voedselmenu_root"
+			sequence="20" />
+
+		<!-- Voedsel.Coop / Winkelier / Artikelbeheer -->
+        <menuitem
+			id="voedselmenu_artikelbeheer"
+			name="Artikelbeheer"
+			parent="voedselmenu_winkelier"
+			sequence="10"
+			action="product.product_template_action"
+		/>
+
 		<!-- Voedsel.Coop / Verkopen -->
         <menuitem
 			id="voedselmenu_verkopen"
