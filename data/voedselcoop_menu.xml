@@ -9,6 +9,14 @@
 			res_model="res.partner"
 			view_mode="tree,form" />
 
+		<!-- Action to open Artikelbeheer -->
+		<act_window
+			id="action_artikelbeheer"
+			name="Artikelbeheer"
+			res_model="product.template"
+			view_type="form"
+			view_mode="tree,form" />
+
 
         <!-- Voedsel.Coop -->
         <menuitem
@@ -47,7 +55,7 @@
 			name="Artikelbeheer"
 			parent="voedselmenu_winkelier"
 			sequence="10"
-			action="product.product_template_action"
+			action="action_artikelbeheer"
 		/>
 
 		<!-- Voedsel.Coop / Verkopen -->

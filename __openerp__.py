@@ -38,6 +38,7 @@
 	],
     'data' : [
 		'data/voedselcoop_menu.xml',
+		'data/retailer_view.xml',
 	],
     'installable': True,
 }
