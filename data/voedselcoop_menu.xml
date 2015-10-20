@@ -1,170 +1,55 @@
 <?xml version="1.0"?>
 <openerp>
 	<data>
+
 		<!-- Action to open Suppliers list -->
 		<act_window
-			id="action_cwa_supplier"
+			id="action_supplier"
 			name="Leveranciers"
 			res_model="res.partner"
 			view_mode="tree,form" />
 
-		<!-- Action to open vergelijkingsscherm -->
-		<act_window
-			id="action_cwa_vergelijkingsscherm"
-			name="Vergelijkingsscherm view"
-			res_model="product.template"
-			view_mode="tree,form" />
 
-        <!-- FoodCoop -->
+        <!-- Voedsel.Coop -->
         <menuitem
-			id="cwa_module.root_menu"
-			name="Voedsel.coop"
+			id="voedselmenu_root"
+			name="Voedsel.Coop"
 			groups="base.group_user"
-			sequence="13"/>
+			sequence="13"
+		/>
 
-
-		<!-- FoodCoop / Artikelbeheer -->
+		<!-- Voedsel.Coop / Inkopen -->
         <menuitem
-			id="cwa_module.product_menu"
-			name="Artikelbeheer"
-			parent="cwa_module.root_menu"
+			id="voedselmenu_inkopen"
+			name="Inkopen"
+			parent="voedselmenu_root"
 			sequence="10" />
 
-		<!-- FoodCoop / Rapportages -->
+		<!-- Voedsel.Coop / Inkopen / Leveranciers -->
         <menuitem
-			id="cwa_module.report_menu"
-			name="Rapportages"
-			parent="cwa_module.root_menu"
-			sequence="20"/>
-
-		<!-- FoodCoop / Community -->
-        <menuitem
-			id="cwa_module.community_menu"
-			name="Community"
-			parent="cwa_module.root_menu"
-			sequence="30"/>
-
-		<!-- FoodCoop / Stambestanden -->
-        <menuitem
-			id="cwa_module.res_menu"
-			name="Stambestanden"
-			parent="cwa_module.root_menu"
-			sequence="40"/>
-
-		<!-- FoodCoop / Instellingen -->
-        <menuitem
-			id="cwa_module.settings_menu"
-			name="Instellingen"
-			parent="cwa_module.root_menu"
-			sequence="50"/>
-
-
-		<!-- FoodCoop / Artikelbeheer / Artikelbestand -->
-        <menuitem
-			id="cwa_module.product_product_menu"
-			name="Artikelbestand"
-			parent="cwa_module.product_menu"
-			sequence="10"
-			action="product.product_template_action" />
-
-		<!-- FoodCoop / Artikelbeheer / CWA import -->
-        <menuitem
-			id="cwa_module.product_CWA_menu"
-			name="CWA import"
-			parent="cwa_module.product_menu"
-			sequence="20"
-			action="action_cwa_supplier" />
-
-		<!-- FoodCoop / Artikelbeheer / Vergelijkingsscherm -->
-        <menuitem
-			id="vergelijkingsscherm_view_menuitem" 
-			name="Vergelijkingsscherm"
-			parent="cwa_module.product_menu"
-			sequence="30"
-			action="action_cwa_vergelijkingsscherm" />
-
-		<!-- FoodCoop / Rapportages / Schapetiketten -->
-        <menuitem
-			id="cwa_module.report_label_menu"
-			name="Schapetiketten"
-			parent="cwa_module.report_menu"
-			sequence="10"
-			action="action_cwa_supplier" />
-
-		<!-- FoodCoop / Rapportages / Dagstaat -->
-        <menuitem
-			id="cwa_module.report_daily_menu"
-			name="Dagstaat"
-			parent="cwa_module.report_menu"
-			sequence="20"
-			action="action_cwa_supplier" />
-
-		<!-- FoodCoop / Rapportages / Weekstaat -->
-        <menuitem
-			id="cwa_module.report_weekly_menu"
-			name="Weekstaat"
-			parent="cwa_module.report_menu"
-			sequence="30"
-			action="action_cwa_supplier" />
-
-
-		<!-- FoodCoop / Community / Leden -->
-        <menuitem
-			id="cwa_module.community_member_menu"
-			name="Leden"
-			parent="cwa_module.community_menu"
-			sequence="10"
-			action="action_cwa_supplier" />
-
-		<!-- FoodCoop / Community / Nieuwsbrieven -->
-        <menuitem
-			id="cwa_module.community_newsletter_menu"
-			name="Nieuwsbrieven"
-			parent="cwa_module.community_menu"
-			sequence="20"
-			action="action_cwa_supplier" />
-
-
-		<!-- FoodCoop / Stambestanden / Product categorieën -->
-        <menuitem
-			id="cwa_module.res_productcategory_menu"
-			name="Product categorieën"
-			parent="cwa_module.res_menu"
-			sequence="20"
-			action="product.product_category_action" />
-
-		<!-- FoodCoop / Stambestanden / Kassa categorieën -->
-        <menuitem
-			id="cwa_module.res_poscategory_menu"
-			name="Kassa categorieën"
-			parent="cwa_module.res_menu"
-			sequence="30"
-			action="point_of_sale.product_pos_category_action" />
-
-		<!-- FoodCoop / Stambestanden / Leveranciers -->
-        <menuitem
-			id="cwa_module.res_supplier_menu"
+			id="voedselmenu_leveranciers"
 			name="Leveranciers"
-			parent="cwa_module.res_menu"
-			sequence="40"
-			action="action_cwa_supplier" />
-
-
-		<!-- FoodCoop / Instellingen / Kassa -->
-        <menuitem
-			id="cwa_module.settings_pos_menu"
-			name="Kassa"
-			parent="cwa_module.settings_menu"
+			parent="voedselmenu_inkopen"
 			sequence="10"
-			action="action_cwa_supplier" />
+			action="base.action_partner_supplier_form"
+		/>
 
-		<!-- FoodCoop / Instellingen / CWA login -->
+		<!-- Voedsel.Coop / Verkopen -->
         <menuitem
-			id="cwa_module.settings_cwa_menu"
-			name="CWA login"
-			parent="cwa_module.settings_menu"
-			sequence="20"
-			action="action_cwa_supplier" />
+			id="voedselmenu_verkopen"
+			name="Verkopen"
+			parent="voedselmenu_root"
+			sequence="30" />
+
+		<!-- Voedsel.Coop / Verkopen / Klanten -->
+        <menuitem
+			id="voedselmenu_klanten"
+			name="Klanten"
+			parent="voedselmenu_verkopen"
+			sequence="10"
+			action="base.action_partner_form"
+		/>
+
 
     </data>
 </openerp>

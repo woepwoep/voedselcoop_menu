@@ -33,10 +33,11 @@
     'description': 'Voedsel.coop Menu',
     'author'  : 'Ronald Wopereis',
     'website' : 'http://www.voedsel.coop',
-    'depends' : ['cwa_module'],
+    'depends' : [
+		'cwa_module'
+	],
     'data' : [
 		'data/voedselcoop_menu.xml',
-		'vergelijkingsscherm.xml'
 	],
     'installable': True,
 }
